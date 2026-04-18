@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import "tailwindcss";
+ @plugin "daisyui" {
+   themes: light --default;
+ }
+
+@plugin "daisyui/theme" {
+  name: "mytheme";
+  default: true;
+  prefersdark: false; 
+  color-scheme: light; 
+}
+
+body{
+  font-family: "Arimo", sans-serif;
+}
+a.active{
+  text-decoration: underline;
+}
+input, select, textarea {
+  border-bottom: 1px solid #ccc;
+  padding: 4px 8px;
+  outline: none;
+}
