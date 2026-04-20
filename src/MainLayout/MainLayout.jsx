@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Navbar from '../Component/Navbar';
+import Footer from '../Component/Footer';
 
 const MainLayout = () => {
     return (
-        <div className='bg-gray-50 py-6 min-h-screen'>
+        <div className='bg-gray-50 pt-6 min-h-screen'>
             <div className=''>
                 <header>
                     <Navbar></Navbar>
@@ -13,7 +14,7 @@ const MainLayout = () => {
                     <Outlet></Outlet>
                 </main>
                 <footer>
-
+                    <Footer></Footer>
                 </footer>
             </div>
         </div>

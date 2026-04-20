@@ -5,6 +5,7 @@ import FindRoommate from "../Pages/FindRoommate";
 import MyListing from "../Pages/MyListing";
 import BrowserList from "../Pages/BrowserList";
 import AllPosts from "../Pages/AllPosts";
+import DetailsPost from "../Pages/DetailsPost";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
             {
                 path: '/allPosts',
                 element: <AllPosts></AllPosts>
+            },
+            {
+                path: '/postDetails/:id',
+                loader:({params}) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                element: <DetailsPost></DetailsPost>
             }
         ]
     } //main layout route end
