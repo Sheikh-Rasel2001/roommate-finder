@@ -6,6 +6,9 @@ import MyListing from "../Pages/MyListing";
 import BrowserList from "../Pages/BrowserList";
 import AllPosts from "../Pages/AllPosts";
 import DetailsPost from "../Pages/DetailsPost";
+import AuthLayout from "../Authentication/AuthLayout";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 const router = createBrowserRouter([
     {
@@ -39,7 +42,21 @@ const router = createBrowserRouter([
                 element: <DetailsPost></DetailsPost>
             }
         ]
-    } //main layout route end
+    }, //main layout route end
+    {
+        path: '/auth',
+        element: <AuthLayout></AuthLayout>,
+        children: [
+            {
+                path: '/auth/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/auth/register',
+                element: <Register></Register>
+            }
+        ]
+    }
 ])
 
 export default router;

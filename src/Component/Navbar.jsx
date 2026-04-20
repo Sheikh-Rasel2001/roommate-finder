@@ -38,8 +38,12 @@ const Navbar = () => {
                         
                     </div>
                     <div className='hidden lg:flex gap-4 items-center'>
+                       <Link to='/auth/register'>
                         <button className="btn btn-active btn-secondary">Register</button>
-                        <button className="btn btn-outline btn-secondary">Log In</button>
+                       </Link>
+                        <Link to='/auth/login'>
+                            <button className="btn btn-outline btn-secondary">Log In</button>
+                        </Link>
                     </div>
                     {/* mobile menu button */}
                     <div className='lg:hidden'>
