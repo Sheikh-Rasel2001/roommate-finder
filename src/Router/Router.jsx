@@ -9,11 +9,14 @@ import DetailsPost from "../Pages/DetailsPost";
 import AuthLayout from "../Authentication/AuthLayout";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRouter from "../Authentication/PrivateRouter";
+import Loading from "../Component/Loading";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        hydrateFallbackElement: <Loading></Loading>,
         children: [
             {
                 index: true,
@@ -22,24 +25,30 @@ const router = createBrowserRouter([
             },
             {
                 path: '/findRoommate',
-                element: <FindRoommate></FindRoommate>
+                element: <PrivateRouter>
+                    <FindRoommate></FindRoommate>
+                </PrivateRouter>
             },
             {
                 path: '/myListing',
-                element: <MyListing></MyListing>
+                element: <PrivateRouter>
+                    <MyListing></MyListing>
+                </PrivateRouter>
             },
             {
                 path: '/browseListing',
-                element: <BrowserList></BrowserList>
+                loader: () => fetch('http://localhost:3000/roommates'),
+                element: <PrivateRouter>
+                    <BrowserList></BrowserList>
+                </PrivateRouter>
             },
-            {
-                path: '/allPosts',
-                element: <AllPosts></AllPosts>
-            },
+
             {
                 path: '/postDetails/:id',
-                loader:({params}) => fetch(`http://localhost:3000/roommates/${params.id}`),
-                element: <DetailsPost></DetailsPost>
+                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                element: <PrivateRouter>
+                    <DetailsPost></DetailsPost>
+                </PrivateRouter>
             }
         ]
     }, //main layout route end

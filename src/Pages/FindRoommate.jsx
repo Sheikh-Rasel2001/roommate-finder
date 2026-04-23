@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
+import AuthContext from '../Authentication/AuthContext';
 
 const FindRoommate = () => {
+
+    const {user} = useContext(AuthContext);
 
     const handlePostSubmit = (e) => {
         e.preventDefault();
@@ -56,14 +59,22 @@ const FindRoommate = () => {
 
                     <input type="text" placeholder='Lifestyle Preferences' name='lifestylePreferences' required />
 
+                    <select name="status" required className='text-gray-400'>
+                        <option value="">Marital Status</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                    </select>
+
+                    <input type="text" placeholder='Contact Number' name='contactNumber' required />
+
                     <select name="availability" required className='text-gray-400'>
                         <option value="">Availability</option>
                         <option value="available">Available</option>
                         <option value="not-available">Not Available</option>
                     </select>
                     {/* read only */}
-                    <input type="email" placeholder='Contact Email' name='contactEmail' required />
-                    <input type="text" placeholder='User Name' name='name' required />
+                    <input value={user?.email} readOnly name='contactEmail'/>
+                    <input value={user?.displayName} readOnly name='name'/>
 
                     <textarea placeholder='Description' name='description' required className='col-span-2'></textarea>
                     <button type="submit" className='col-span-2 btn btn-primary'>Add Request</button>
