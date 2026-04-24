@@ -27,7 +27,7 @@ const PopularCity = () => {
                             <div className='absolute top-0 left-0 flex items-center justify-center flex-col w-full h-full'>
                                 <h3 className='text-3xl font-bold text-white text-center'>{city.name}</h3>
                                 <p className='text-lg text-white font-semibold'>
-                                    <Link className='hover:underline'>Room</Link> | <Link className='hover:underline'>Roommate</Link>
+                                    <Link className='hover:underline'>Room</Link> | <Link to={'/browseListing'} className='hover:underline'>Roommate</Link>
                                 </p>
                             </div>
 
