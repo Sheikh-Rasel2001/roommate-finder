@@ -11,6 +11,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRouter from "../Authentication/PrivateRouter";
 import Loading from "../Component/Loading";
+import UpdatePost from "../Pages/UpdatePost";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,12 @@ const router = createBrowserRouter([
                 element: <PrivateRouter>
                     <DetailsPost></DetailsPost>
                 </PrivateRouter>
+            },
+
+            {
+                path: '/updatePost/:id',
+                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                element: <UpdatePost></UpdatePost>
             }
         ]
     }, //main layout route end

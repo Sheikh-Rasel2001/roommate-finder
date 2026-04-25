@@ -81,9 +81,11 @@ const MyListing = () => {
                                         </span>
                                     </td>
                                     <td className="flex gap-2 justify-center py-4">
+                                        <Link to={`/updatePost/${post._id}`}>
                                         <button className="btn btn-sm bg-blue-600 hover:bg-blue-800 text-white border-none">
                                             Update
                                         </button>
+                                        </Link>
                                         <button
                                             onClick={() => handleDeletePost(post._id)}
                                             className="btn btn-sm bg-red-500 hover:bg-red-700 text-white border-none"
