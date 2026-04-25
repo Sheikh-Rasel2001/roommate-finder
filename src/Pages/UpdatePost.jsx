@@ -14,7 +14,7 @@ const UpdatePost = () => {
         const updatePost = Object.fromEntries(formData.entries())
 
         // update post to the server
-        fetch(`http://localhost:3000/roommates/${_id}`, {
+        fetch(`https://roommate-finder-server.onrender.com/roommates/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
@@ -25,7 +25,7 @@ const UpdatePost = () => {
         .then(data => {
             if(data.modifiedCount) {
                  Swal.fire({
-                        position: "top-end",
+                        position: "center",
                         icon: "success",
                         title: "Your work has been saved",
                         showConfirmButton: false,

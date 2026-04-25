@@ -76,7 +76,7 @@ const Register = () => {
                     .then(() => {
                         console.log('updated profile');
                         // post user info to database
-                        fetch('http://localhost:3000/users', {
+                        fetch('https://roommate-finder-server.onrender.com/users', {
                             method: "POST",
                             headers: {
                                 'content-type' : 'application/json'

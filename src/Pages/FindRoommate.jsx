@@ -15,7 +15,7 @@ const FindRoommate = () => {
         postData.rentAmount = parseFloat(postData.rentAmount);
 
         // post data to server
-        fetch('http://localhost:3000/roommates', {
+        fetch('https://roommate-finder-server.onrender.com/roommates', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

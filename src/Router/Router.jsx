@@ -4,7 +4,6 @@ import Home from "../Pages/Home";
 import FindRoommate from "../Pages/FindRoommate";
 import MyListing from "../Pages/MyListing";
 import BrowserList from "../Pages/BrowserList";
-import AllPosts from "../Pages/AllPosts";
 import DetailsPost from "../Pages/DetailsPost";
 import AuthLayout from "../Authentication/AuthLayout";
 import Login from "../Pages/Login";
@@ -21,7 +20,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                loader: () => fetch('http://localhost:3000/featured-roommates'),
+                loader: () => fetch('https://roommate-finder-server.onrender.com/featured-roommates'),
                 element: <Home></Home>
             },
             {
@@ -38,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/browseListing',
-                loader: () => fetch('http://localhost:3000/roommates'),
+                loader: () => fetch('https://roommate-finder-server.onrender.com/roommates'),
                 element: <PrivateRouter>
                     <BrowserList></BrowserList>
                 </PrivateRouter>
@@ -46,7 +45,7 @@ const router = createBrowserRouter([
 
             {
                 path: '/postDetails/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                loader: ({ params }) => fetch(`https://roommate-finder-server.onrender.com/roommates/${params.id}`),
                 element: <PrivateRouter>
                     <DetailsPost></DetailsPost>
                 </PrivateRouter>
@@ -54,7 +53,7 @@ const router = createBrowserRouter([
 
             {
                 path: '/updatePost/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                loader: ({ params }) => fetch(`https://roommate-finder-server.onrender.com/${params.id}`),
                 element: <UpdatePost></UpdatePost>
             }
         ]

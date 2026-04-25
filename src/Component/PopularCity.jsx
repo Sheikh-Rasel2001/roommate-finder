@@ -1,16 +1,12 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import dhaka from '../assets/dhaka.jpg';
-import chittagang from '../assets/chittagang.jpg';
-import rajshahi from '../assets/rajshahi.jpg';
-import sylhet from '../assets/sylhet.jpg';
 
 const cities = [
-    { id: 1, name: 'Dhaka', image: dhaka },
-    { id: 2, name: 'Chittagong', image: chittagang },
-    { id: 3, name: 'Rajshahi', image: rajshahi },
-    { id: 4, name: 'Sylhet', image: sylhet }
+    { id: 1, name: 'Dhaka', image: 'https://i.ibb.co.com/d4zG9z1D/dhaka.jpg' },
+    { id: 2, name: 'Chittagong', image: 'https://i.ibb.co.com/zT6QKGkH/chittagong.jpg'},
+    { id: 3, name: 'Rajshahi', image: 'https://i.ibb.co.com/mV03Qyp6/rajshahi.jpg' },
+    { id: 4, name: 'Sylhet', image: 'https://i.ibb.co.com/fGNNgLdR/sylhet.jpg' }
 ]
 
 const PopularCity = () => {

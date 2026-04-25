@@ -15,7 +15,7 @@ const DetailsPost = () => {
         alert("You can't like your own post");
         return;
        }
-       fetch(`http://localhost:3000/roommates/like/${_id}`, {
+       fetch(`https://roommate-finder-server.onrender.com/roommates/like/${_id}`, {
         method: 'PATCH',
         headers: {
             'content-type' : 'application/json'

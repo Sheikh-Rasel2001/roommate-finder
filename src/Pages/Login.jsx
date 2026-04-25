@@ -64,7 +64,7 @@ const Login = () => {
                         <Link className='text-blue-600 underline font-semibold'>Forgot Password?</Link>
                     </p>
                     {/* submit button */}
-                    <button className="btn btn-active btn-secondary mt-4">Register</button>
+                    <button className="btn btn-active btn-secondary mt-4">Log In</button>
                     {/* have account */}
                     <p>
                         Don't have an account? <Link to={'/auth/register'} className='text-blue-600 underline font-semibold'>Log In</Link>
